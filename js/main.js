@@ -8,7 +8,19 @@ function addItem(e) {
     const item = {
         text,
         done: false,
-    }
-}
+    };
+    items.push(item);
+    populateList(items, itemsList);
+    this.reset();
+};
+function populateList(items = [], itemsList) {
+    itemsList.innerHTML = items.map((item, i) => {
+        return `
+        <li>
+            <label for="">${item.text}</label>
+        </li>
+        `;
+    }).join("");
+};
 
 addItems.addEventListener("submit", addItem);
