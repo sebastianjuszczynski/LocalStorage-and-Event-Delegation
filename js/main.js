@@ -17,7 +17,7 @@ function populateList(items = [], itemsList) {
     itemsList.innerHTML = items.map((item, i) => {
         return `
         <li>
-            <input type="checkbox" data-index=${i} id="item${i}" />
+            <input type="checkbox" data-index=${i} id="item${i}" ${item.done ? "checked" : ""} />
             <label for="item${i}">${item.text}</label>
         </li>
         `;
